@@ -37,3 +37,22 @@ Then type
 
 This should have set the system ruby to use 2.2.3 through rvm
 To verify, log out and back in and type  `which ruby` or `ruby --version`
+
+
+**How To run app**
+
+Ensure needed gems are installed.
+Example: `gem install datamapper`
+
+Start up main Sinatra app with
+```ruby app.rb```
+
+This should result in something similar to
+```
+[2015-09-18 22:32:03] INFO  WEBrick 1.3.1
+[2015-09-18 22:32:03] INFO  ruby 2.2.3 (2015-08-18) [x86_64-linux]
+== Sinatra (v1.4.6) has taken the stage on 8080 for development with backup from WEBrick
+[2015-09-18 22:32:03] INFO  WEBrick::HTTPServer#start: pid=44061 port=8080
+```
+
+In your browser go to localhost:8080 to see the app running
