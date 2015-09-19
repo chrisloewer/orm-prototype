@@ -1,4 +1,3 @@
 window.onload = function() {
-    ajaxInsertTemplate('book-list', 'book_item', '/api/books');
+    ajaxInsertTemplate('book-section', 'book_item', '/api/books');
 };
-

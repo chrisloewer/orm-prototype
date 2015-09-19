@@ -28,3 +28,13 @@ get '/api/books' do
   @books = Book.all
   JSON.generate(@books)
 end
+
+post '/api/books' do
+  b = Book.new
+  b.title = params[:title]
+  b.author = params[:author]
+  b.owner = params[:owner]
+  b.location = params[:location]
+  b.save
+  redirect '/'
+end

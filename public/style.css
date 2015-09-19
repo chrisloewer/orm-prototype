@@ -1,3 +1,33 @@
+* {
+  font-family: 'Work Sans', sans-serif;
+}
+
+body {
+  text-align: center;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+h2 {
+  font-weight: 500;
+}
+
+div {
+  font-weight: 300;
+  font-size: 16px;
+}
+
 .author {
-  color: #999999;
+  color: #666666;
+  font-weight: 200;
+}
+
+input[type='submit']{
+  display: inline-block;
+  background-color: #CCCCCC;
+  border: none;
+  padding: 20px;
+  margin: 20px;
 }
