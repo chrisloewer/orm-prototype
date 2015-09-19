@@ -1,21 +1,30 @@
 require 'sinatra'
 require 'data_mapper'
-require 'handlebars'
+require 'json'
 
 set :port, 8080
 
+# DATABASE
+DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/books.db")
 
-handlebars = Handlebars::Context.new
+class Book
+  include DataMapper::Resource
+  property :id, Serial
+  property :title, Text, :required => true
+  property :author, Text, :required => true
+  property :owner, Text, :required => true
+  property :location, Text
+end
+
+DataMapper.finalize.auto_upgrade!
 
 
-main = File.read(File.join('public', 'templates/template.hbs'))
-element = File.read(File.join('public', 'templates/template2.hbs'))
-
-
-template = handlebars.compile(main)
-template_two = handlebars.compile(element)
-
-
+# ROUTING
 get '/' do
-  template.call(:say => template_two.call(:content => 'TEST'), :what => 'one!')
+  erb :home
+end
+
+get '/api/books' do
+  @books = Book.all
+  JSON.generate(@books)
 end
