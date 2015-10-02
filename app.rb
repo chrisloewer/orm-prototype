@@ -2,7 +2,7 @@ require 'sinatra'
 require 'data_mapper'
 require 'json'
 
-set :port, 8080
+set :port, 55000
 
 # DATABASE
 DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/books.db")
