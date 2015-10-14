@@ -56,3 +56,9 @@ This should result in something similar to
 ```
 
 In your browser go to localhost:8080 to see the app running
+
+*To install sqlite*
+```sudo apt-get install libgmp3-dev```
+
+Sidenote:
+Ensure you have the ruby dev kit installed with `sudo apt-get install ruby-dev`
